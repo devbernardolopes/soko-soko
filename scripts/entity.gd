@@ -16,7 +16,7 @@ const ANIMATION_WALK_RIGHT: StringName = &"right"
 const ANIMATION_WALK_DOWN: StringName = &"down"
 const ANIMATION_WALK_LEFT: StringName = &"left"
 
-@export var move_speed: float = 100.0
+@export var move_speed: float = 32.0
 
 var controller: EntityController = null
 var facing: float = 1.0
@@ -65,7 +65,7 @@ func _process_movement(delta: float) -> void:
 	if position.is_equal_approx(move_to * Helper.BASE_ENTITY_LENGTH):
 		state = State.IDLE
 		return
-	position = position.lerp(move_to * Helper.BASE_ENTITY_LENGTH, 0.9 * delta * 32)
+	position = position.lerp(move_to * Helper.BASE_ENTITY_LENGTH, 0.9 * delta * move_speed)
 
 
 func _process(delta: float) -> void:

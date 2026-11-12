@@ -68,6 +68,7 @@ position = Vector2(1120, 928)
 
 [node name="Hero" parent="Entities" unique_id=1532434704 instance=ExtResource("2_xq63u")]
 position = Vector2(352, 864)
+move_speed = 100.0
 
 [node name="PlayerController" type="Node" parent="Entities/Hero" unique_id=33456236]
 script = ExtResource("3_uc3kj")
