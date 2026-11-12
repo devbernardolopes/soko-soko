@@ -1,0 +1,35 @@
+[gd_resource type="TileSet" format=3 uid="uid://e00lbquudsdp"]
+
+[ext_resource type="Texture2D" uid="uid://bc1t2051mc1a4" path="res://assets/sokoban_tilesheet.png" id="1_nomev"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_npbm6"]
+texture = ExtResource("1_nomev")
+texture_region_size = Vector2i(64, 64)
+6:6/0 = 0
+6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+7:6/0 = 0
+7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+8:6/0 = 0
+8:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+9:6/0 = 0
+9:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+6:7/0 = 0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+7:7/0 = 0
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+8:7/0 = 0
+8:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+9:7/0 = 0
+9:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+
+[resource]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 7
+sources/1 = SubResource("TileSetAtlasSource_npbm6")

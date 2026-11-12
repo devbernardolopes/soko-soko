@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://3e75vam80wxf"]
+
+[ext_resource type="Script" uid="uid://837oxtey2lp7" path="res://scripts/crate.gd" id="1_b66cd"]
+
+[node name="Crate" type="Area2D" unique_id=499197634]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_b66cd")
+metadata/_custom_type_script = "uid://be3to54lq3ecx"

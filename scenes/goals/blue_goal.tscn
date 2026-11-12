@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cuyx28gm7d5kx"]
+
+[ext_resource type="Script" uid="uid://dx8ewqkh53y6p" path="res://scripts/goal.gd" id="1_66a1w"]
+[ext_resource type="Resource" uid="uid://cyrhrqqlvxb0s" path="res://resources/goals/blue_goal.tres" id="2_vyg6v"]
+
+[node name="BlueGoal" type="Area2D" unique_id=1885064984]
+script = ExtResource("1_66a1w")
+data = ExtResource("2_vyg6v")
+metadata/_custom_type_script = "uid://dx8ewqkh53y6p"

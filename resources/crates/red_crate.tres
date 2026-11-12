@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CrateData" format=3 uid="uid://csiiv08qp74om"]
+
+[ext_resource type="Script" uid="uid://blrvf72wp7g3x" path="res://resources/crate_data.gd" id="1_2gljw"]
+[ext_resource type="Texture2D" uid="uid://bc1t2051mc1a4" path="res://assets/sokoban_tilesheet.png" id="2_10exp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gljw"]
+atlas = ExtResource("2_10exp")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c132w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gljw")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_2gljw")
+id = &"red_crate"
+visual = SubResource("SpriteFrames_c132w")

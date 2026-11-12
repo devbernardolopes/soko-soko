@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b4eej50cc3q0c"]
+
+[ext_resource type="Script" uid="uid://dx8ewqkh53y6p" path="res://scripts/goal.gd" id="1_ghvue"]
+[ext_resource type="Resource" uid="uid://dn3leuttrmx5" path="res://resources/goals/brown_goal.tres" id="2_15qe6"]
+
+[node name="BrownGoal" type="Area2D" unique_id=953472380]
+script = ExtResource("1_ghvue")
+data = ExtResource("2_15qe6")
+metadata/_custom_type_script = "uid://dx8ewqkh53y6p"

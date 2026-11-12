@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bcrgm1oetj12h"]
+
+[ext_resource type="Script" uid="uid://dx8ewqkh53y6p" path="res://scripts/goal.gd" id="1_jbojv"]
+
+[node name="Goal" type="Area2D" unique_id=1931068193]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_jbojv")
+metadata/_custom_type_script = "uid://be3to54lq3ecx"

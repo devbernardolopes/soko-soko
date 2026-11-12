@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ds3rncep4dnk"]
+
+[ext_resource type="Script" uid="uid://837oxtey2lp7" path="res://scripts/crate.gd" id="1_7c2ts"]
+[ext_resource type="Resource" uid="uid://csiiv08qp74om" path="res://resources/crates/red_crate.tres" id="2_y8j3a"]
+
+[node name="RedCrate" type="Area2D" unique_id=2025751057]
+script = ExtResource("1_7c2ts")
+data = ExtResource("2_y8j3a")
+metadata/_custom_type_script = "uid://837oxtey2lp7"

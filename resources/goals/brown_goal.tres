@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="GoalData" format=3 uid="uid://dn3leuttrmx5"]
+
+[ext_resource type="Script" uid="uid://blrvf72wp7g3x" path="res://resources/crate_data.gd" id="1_0h433"]
+[ext_resource type="Resource" uid="uid://j83i7mp6yt4c" path="res://resources/crates/brown_crate.tres" id="2_1d45j"]
+[ext_resource type="Script" uid="uid://c4n77614c5jwa" path="res://resources/goal_data.gd" id="2_gsc1j"]
+[ext_resource type="Texture2D" uid="uid://bc1t2051mc1a4" path="res://assets/sokoban_tilesheet.png" id="4_4k5cs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ah742"]
+atlas = ExtResource("4_4k5cs")
+region = Rect2(768, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1d45j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ah742")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_gsc1j")
+accepts = Array[ExtResource("1_0h433")]([ExtResource("2_1d45j")])
+id = &"brown_goal"
+visual = SubResource("SpriteFrames_1d45j")
+metadata/_custom_type_script = "uid://c4n77614c5jwa"

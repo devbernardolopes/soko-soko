@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://crl4ignxq55qd"]
+
+[ext_resource type="Script" uid="uid://d4gl2bsifivc0" path="res://scripts/entity.gd" id="1_q7548"]
+[ext_resource type="Resource" uid="uid://juf3j1u70bei" path="res://resources/entities/hero.tres" id="2_c132w"]
+
+[node name="Hero" type="Area2D" unique_id=1532434704]
+collision_mask = 7
+script = ExtResource("1_q7548")
+data = ExtResource("2_c132w")
+metadata/_custom_type_script = "uid://d4gl2bsifivc0"

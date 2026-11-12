@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cg7n3xxvue712"]
+
+[ext_resource type="Script" uid="uid://d4gl2bsifivc0" path="res://scripts/entity.gd" id="1_iiwub"]
+
+[node name="Entity" type="Area2D" unique_id=1251160697]
+collision_layer = 2
+collision_mask = 7
+input_pickable = false
+script = ExtResource("1_iiwub")
+move_speed = null

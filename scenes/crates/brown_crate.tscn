@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ce650x4i0kciq"]
+
+[ext_resource type="Script" uid="uid://837oxtey2lp7" path="res://scripts/crate.gd" id="1_fwtp5"]
+[ext_resource type="Resource" uid="uid://j83i7mp6yt4c" path="res://resources/crates/brown_crate.tres" id="2_ma405"]
+
+[node name="BrownCrate" type="Area2D" unique_id=1771118800]
+script = ExtResource("1_fwtp5")
+data = ExtResource("2_ma405")
+metadata/_custom_type_script = "uid://837oxtey2lp7"

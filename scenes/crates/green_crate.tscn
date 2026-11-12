@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bj1cdnxyrhq2f"]
+
+[ext_resource type="Script" uid="uid://837oxtey2lp7" path="res://scripts/crate.gd" id="1_vxuiq"]
+[ext_resource type="Resource" uid="uid://cyt0vqdk6qryl" path="res://resources/crates/green_crate.tres" id="2_xe655"]
+
+[node name="GreenCrate" type="Area2D" unique_id=2016378310]
+script = ExtResource("1_vxuiq")
+data = ExtResource("2_xe655")
+metadata/_custom_type_script = "uid://837oxtey2lp7"

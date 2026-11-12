@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://x8ew4t0a1vd5"]
+
+[ext_resource type="Script" uid="uid://dx8ewqkh53y6p" path="res://scripts/goal.gd" id="1_6vmvd"]
+[ext_resource type="Resource" uid="uid://mmrjaglkgblr" path="res://resources/goals/green_goal.tres" id="2_pppdg"]
+
+[node name="GreenGoal" type="Area2D" unique_id=1873936316]
+script = ExtResource("1_6vmvd")
+data = ExtResource("2_pppdg")
+metadata/_custom_type_script = "uid://dx8ewqkh53y6p"
