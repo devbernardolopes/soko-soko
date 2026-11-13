@@ -47,7 +47,7 @@ position = Vector2(352, 865)
 position = Vector2(480, 865)
 
 [node name="BrownCrate2" parent="Crates" unique_id=1524707474 instance=ExtResource("2_uc3kj")]
-position = Vector2(800, 992)
+position = Vector2(416, 865)
 
 [node name="BrownCrate3" parent="Crates" unique_id=732814789 instance=ExtResource("2_uc3kj")]
 position = Vector2(672, 864)
@@ -67,10 +67,9 @@ position = Vector2(1120, 928)
 [node name="Entities" type="Node2D" parent="." unique_id=1235973953]
 
 [node name="Hero" parent="Entities" unique_id=1532434704 instance=ExtResource("2_xq63u")]
-position = Vector2(352, 864)
-move_speed = 100.0
+position = Vector2(256, 960)
 
-[node name="PlayerController" type="Node" parent="Entities/Hero" unique_id=33456236]
+[node name="PlayerController" type="Node" parent="Entities/Hero" unique_id=1343639544]
 script = ExtResource("3_uc3kj")
 metadata/_custom_type_script = "uid://emvgcke1nvkp"
 
@@ -83,6 +82,7 @@ script = ExtResource("2_pol6k")
 target = NodePath("../Entities/Hero")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=889866743]
+color = Color(0.16924527, 0.1692453, 0.16924527, 1)
 
 [node name="Hud" type="CanvasLayer" parent="." unique_id=916958316]
 

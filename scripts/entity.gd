@@ -16,7 +16,9 @@ const ANIMATION_WALK_RIGHT: StringName = &"right"
 const ANIMATION_WALK_DOWN: StringName = &"down"
 const ANIMATION_WALK_LEFT: StringName = &"left"
 
-@export var move_speed: float = 32.0
+@export_tool_button("Snap") var snap: Callable = _snap
+# @export var move_speed: float = 32.0
+@export var move_duration: float = 0.15   # seconds to travel one tile (tune this)
 
 var controller: EntityController = null
 var facing: float = 1.0
@@ -27,6 +29,13 @@ var state: State = State.IDLE:
 var _last_state: State = State.IDLE
 var move_from: Vector2 = Vector2.ZERO
 var move_to: Vector2 = Vector2.ZERO
+var _move_tween: Tween = null
+
+
+func _snap() -> void:
+	position = (position / Helper.BASE_ENTITY_LENGTH).round() * Helper.BASE_ENTITY_LENGTH
+	if collision:
+		print(collision.shape.get_rect())
 
 
 func _ready() -> void:
@@ -40,38 +49,53 @@ func _ready() -> void:
 func _process_input() -> void:
 	if not controller:
 		return
-	if not state == State.IDLE:
+	if state != State.IDLE:
 		return
 	var dir: Vector2 = controller.get_move_intent()
-	if not dir.is_zero_approx():
-		move_from = position / Helper.BASE_ENTITY_LENGTH
-		if dir.is_equal_approx(Vector2.UP):
-			move_to = move_from + Vector2.UP
-			state = State.WALK_UP
-		if dir.is_equal_approx(Vector2.RIGHT):
-			move_to = move_from + Vector2.RIGHT
-			state = State.WALK_RIGHT
-		if dir.is_equal_approx(Vector2.DOWN):
-			move_to = move_from + Vector2.DOWN
-			state = State.WALK_DOWN
-		if dir.is_equal_approx(Vector2.LEFT):
-			move_to = move_from + Vector2.LEFT
-			state = State.WALK_LEFT
+	# Prefer cardinal directions only (Sokoban almost never wants diagonals)
+	if abs(dir.x) > abs(dir.y):
+		dir = Vector2(sign(dir.x), 0.0)
+	elif abs(dir.y) > 0.0:
+		dir = Vector2(0.0, sign(dir.y))
+	else:
+		return
+	# Current grid cell (assumes you are already snapped)
+	move_from = (position / Helper.BASE_ENTITY_LENGTH).round()
+	move_to = move_from + dir
+	# Set facing / animation state
+	if dir == Vector2.UP:
+		state = State.WALK_UP
+	elif dir == Vector2.RIGHT:
+		state = State.WALK_RIGHT
+	elif dir == Vector2.DOWN:
+		state = State.WALK_DOWN
+	elif dir == Vector2.LEFT:
+		state = State.WALK_LEFT
+	_start_move()
 
 
-func _process_movement(delta: float) -> void:
-	if state == State.IDLE:
-		return
-	if position.is_equal_approx(move_to * Helper.BASE_ENTITY_LENGTH):
-		state = State.IDLE
-		return
-	position = position.lerp(move_to * Helper.BASE_ENTITY_LENGTH, 0.9 * delta * move_speed)
+func _start_move() -> void:
+	# Kill any previous tween just in case
+	if _move_tween and _move_tween.is_valid():
+		_move_tween.kill()
+	var target_pos := move_to * Helper.BASE_ENTITY_LENGTH
+	_move_tween = create_tween()
+	_move_tween.set_trans(Tween.TRANS_LINEAR)   # or TRANS_SINE / TRANS_QUAD for a softer feel
+	_move_tween.set_ease(Tween.EASE_IN_OUT)
+	_move_tween.tween_property(self, "position", target_pos, move_duration)
+	_move_tween.finished.connect(_on_move_finished, CONNECT_ONE_SHOT)
+
+
+func _on_move_finished() -> void:
+	# Guarantee we land exactly on the grid
+	position = move_to * Helper.BASE_ENTITY_LENGTH
+	state = State.IDLE
+	_move_tween = null
 
 
 func _process(delta: float) -> void:
 	if not Engine.is_editor_hint():
 		_process_input()
-		_process_movement(delta)
 
 
 func _play_animation(animation: StringName, speed: float = 1.0) -> void:
